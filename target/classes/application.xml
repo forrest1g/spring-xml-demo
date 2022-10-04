@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="countryConfigBean" class="com.itranswarp.learnjava.VTPConfig">
+		<property name="countries">
+			<list>
+				<ref bean="US"/>
+				<ref bean="IN" />
+				<ref bean="PO" />
+				<ref bean="KN" />
+			</list>
+		</property>
+	</bean>
+	<bean id="US" class="com.itranswarp.learnjava.CountryConfig">
+		<property name="priority" value="2"/>
+		<property name="country" value="US"/>
+		<property name="countryFriends" value="['UK','AG']"/>
+	</bean>
+	<bean id="IN" class="com.itranswarp.learnjava.CountryConfig">
+		<property name="priority" value="3"/>
+		<property name="country" value="IN"/>
+		<property name="countryFriends" value="['UK','AG']"/>
+	</bean>
+	<bean id="PO" class="com.itranswarp.learnjava.CountryConfig">
+		<property name="priority" value="4"/>
+		<property name="country" value="PO"/>
+		<property name="countryFriends" value="['NL']"/>
+	</bean>
+	<bean id="KN" class="com.itranswarp.learnjava.CountryConfig">
+		<property name="priority" value="5"/>
+		<property name="country" value="KN"/>
+		<property name="countryFriends" value="['DN']"/>
+	</bean>
+</beans>
